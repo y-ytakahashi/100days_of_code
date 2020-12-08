@@ -4,12 +4,12 @@ const msg = `hello ${myName}`;
 console.log(msg);
 
 // ES5
-const isEvent = function (num) {
+const isEvent = function (num:number) {
   return num % 2 === 0;
 };
 
 //ES6
-const isEvent2 = (num) => num % 2 === 0;
+const isEvent2 = (num:number) => num % 2 === 0;
 
 console.log(isEvent(6), isEvent2(4));
 
@@ -45,3 +45,15 @@ const person = {
 person.sayHello().then((data) => {
   console.log(data);
 });
+
+
+/**
+ * Default Parameter
+ */
+
+ function multiply(a:number, b:number = 1){
+   return a * b
+ }
+
+ console.log(multiply(3))
+
