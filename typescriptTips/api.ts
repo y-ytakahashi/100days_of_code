@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 
-
+//ローカル実行だとエラーとなる
 const config ={
   baseURL:'localhost:5000'
 } as AxiosRequestConfig
