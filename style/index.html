@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    button:disabled {
+      color: #ccc;
+    }
+    .disableDefaultButtonStyle {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+      background-image: none;
+      font-family: inherit;
+      font-size: 100%;
+    }
+  </style>
+  <body>
+    <!-- デフォルトスタイルを無効に変更する -->
+    <button type="button" class="disableDefaultButtonStyle">デフォルトスタイルを無効</button>
+    
+    <!-- フォーム以外で button を利用する場合、 type属性で button を指定する -->
+    <button type="button" disabled>アラートを表示する</button>
+    <!-- ボタン要素を直接非活性にする -->
+    <button type="button" disabled>アラートを表示する</button>
+
+    <form>
+      <fieldset disabled>
+        <button type="button">フィールド非活性ボタン</button>
+      </fieldset>
+      <fieldset>
+        <button type="button">フィールド非活性ボタン</button>
+      </fieldset>
+    </form>
+
+
+    <nav>
+      <a href="/">TOP</a>
+      <a href="/category/">大カテゴリ</a>
+      <a href="/category/aaa/">中カテゴリ</a>
+      <a>現在地</a>
+    </nav>
+
+    <div class="column">
+      <div class="column__side">1列目 200px 固定</div>
+      <div class="column__main">2列目</div>
+    </div>
+    <style>
+      .column {
+        display: flex;
+      }
+      .column__side {
+        flex: 0 0 200px;
+        background:gray
+      }
+      .column__main {
+        flex: 1 1 auto;
+      }
+    </style>
+
+
+
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", action);
+      function action() {
+        alert("Action!!");
+      }
+    </script>
+  </body>
+</html>
