@@ -7,20 +7,30 @@
     <title>Document</title>
   </head>
   <style>
-    .lv1 {
-      /* text-align: center; */
-      width:200px;
-      margin:auto;
+    html {
+      font-size: 62.5%;
+    }
+
+    .flex {
+      box-sizing: border-box;
+      width: 500px;
+      margin: auto;
+      display: flex;
+      flex-wrap: inherit;
+    }
+    .flex__item {
+      flex-basis: 200px;
+      flex-shrink: 1;
+      flex-grow: 1;
+      border: 1px solid tomato;
+      height:100vh;
     }
   </style>
   <body>
-    <div class="lv1">The quick brown fox</div>
-
-    <div class="lv1">
-      The quick brown fox jumps over the lazy dog. The quick brown fox jumps
-      over the lazy dog. The quick brown fox jumps over the lazy dog. The quick
-      brown fox jumps over the lazy dog.
+    <div class="flex">
+      <div class="flex__item">1</div>
+      <div class="flex__item">2</div>
+      <div class="flex__item">3</div>
     </div>
-
   </body>
 </html>
