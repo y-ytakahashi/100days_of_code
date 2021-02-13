@@ -1,0 +1,24 @@
+
+.container {
+  background:gray;
+  padding:1rem;
+  position: relative;
+  height:30vh;
+}
+.div-1 {
+  background: orange;
+  height:10vh;
+  width:auto;
+  z-index: 20;
+  position: relative;
+
+}
+.div-2{
+  background-color: antiquewhite;
+  height:10vh;
+  width:100vh;
+  position:absolute;
+  top:40px;
+  left:10px;
+  z-index: 10;
+}
