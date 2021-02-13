@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html {
+      /* font-size: 62.5%; */
+    }
+    .inlineColor {
+      background: lightblue;
+      margin: 10px;
+      display: inline-block; /* 高さを指定した横並び*/
+      height: 70vh; /* inline-block の場合、高さを指定することができる*/
+    } 
+
+    .blockColor {
+      background: lightgreen;
+      margin: 10px;
+    }
+
+    .block {
+      /* インライン要素とブロック要素でレイアウトの指定方法が異なる */
+
+    }
+  </style>
+  <body>
+    <div>
+      <p>
+        インライン要素は横に配置され、ブロック要素は縦に配置される
+        主な違いとしては、インライン要素は高さ、幅を指定する頃ができない。
+        ブロック要素は高さ、幅を指定することができる。<br>
+        インライン要素とブロック要素でレイアウトの指定方法が異なる
+      </p>
+    </div>
+
+    <!-- インライン要素は左右に配置する -->
+    <!-- 縦幅、横幅を指定することがでいない -->
+    <span class="inlineColor">インライン要素</span>
+    <span class="inlineColor">インライン要素</span>
+    <span class="inlineColor">インライン要素</span>
+    <span class="inlineColor">インライン要素</span>
+
+    <!-- ブロック要素は縦に配置する -->
+    <div class="blockColor">ブロック要素</div>
+    <div class="blockColor">ブロック要素</div>
+    <div class="blockColor">ブロック要素</div>
+    <div class="blockColor">ブロック要素</div>
+  </body>
+</html>

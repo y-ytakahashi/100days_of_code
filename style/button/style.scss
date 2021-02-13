@@ -1,0 +1,34 @@
+$cWhite: white;
+$cBlack: rgb(131, 119, 119);
+.container {
+  text-align: center;
+}
+.btn {
+  background-color: white;
+  color: black; /* ブラウザのデフォルトで黒だかあえて指定する*/
+  border: 1px solid black;
+  /*  上 右 下 左 上から時計回りで指定する*/
+  /* padding: 10px 40px 10px 40px;  */
+
+  /* 「上下」「左上」 から時計回りで指定する */
+  padding: 10px 40px; /* 内側の余白*/
+  /* padding: 10px ;  「上下左上」 から時計回りで指定する */
+
+  font-weight: 600;
+  /* マウスカーソルの変更 */
+  cursor: pointer;
+  margin: 10px 0; /* 外側の余白*/
+  transition: background-color 0.3s ease 2s; /* 状態が変わった時の変化する時間を指定する*/
+
+  &:hover {
+    background-color: $cBlack;
+    color: $cWhite;
+  }
+  &-cube {
+    background-color: $cBlack;
+
+    & .inner {
+      background-color: $cBlack;
+    }
+  }
+}
