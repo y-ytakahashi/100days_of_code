@@ -1,24 +1,49 @@
-
 .container {
-  background:gray;
-  padding:1rem;
+  background: gray;
+  padding: 1rem;
   position: relative;
-  height:30vh;
+  height: 30vh;
 }
 .div-1 {
   background: orange;
-  height:10vh;
-  width:auto;
+  height: 10vh;
+  width: auto;
   z-index: 20;
   position: relative;
-
 }
-.div-2{
+.div-2 {
   background-color: antiquewhite;
-  height:10vh;
-  width:100vh;
-  position:absolute;
-  top:40px;
-  left:10px;
+  height: 10vh;
+  width: 100vh;
+  position: absolute;
+  top: 40px;
+  left: 10px;
   z-index: 10;
+}
+
+.fixed {
+  background-color: lightcoral;
+  // height:40vh;
+  padding: 10px;
+  position: relative;
+
+  &-div1 {
+    background: orange;
+    height: 30px;
+    position: absolute;
+    left: 15rem;
+  }
+  &-div2 {
+    background: lightblue;
+    height: 70vh;
+    // position:relative;
+
+    &-item {
+      background: lightgreen;
+      position: relative;
+      width: 100px;
+      height: 10vh;
+      left:20rem;
+    }
+  }
 }

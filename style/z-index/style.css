@@ -22,4 +22,30 @@
   left: 10px;
   z-index: 10;
 }
+
+.fixed {
+  background-color: lightcoral;
+  padding: 10px;
+  position: relative;
+}
+
+.fixed-div1 {
+  background: orange;
+  height: 30px;
+  position: absolute;
+  left: 15rem;
+}
+
+.fixed-div2 {
+  background: lightblue;
+  height: 70vh;
+}
+
+.fixed-div2-item {
+  background: lightgreen;
+  position: relative;
+  width: 100px;
+  height: 10vh;
+  left: 20rem;
+}
 /*# sourceMappingURL=style.css.map */
