@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    /* 
+      詳細度
+      id > Class > parent attribute
+      なるべく絞った粒度のスタイルが優先度が高い
+     */
+    .parent {
+      color: blue;
+    }
+    .inlineColor {
+      background: lightblue;
+      margin: 10px;
+      display: inline-block; /* 高さを指定した横並び*/
+      height: 70vh; /* inline-block の場合、高さを指定することができる*/
+    }
+
+    .blockColor {
+      background: lightgreen;
+      margin: 10px;
+    }
+  </style>
+  <body>
+    <div>
+      <p></p>
+    </div>
+
+    <!-- インライン要素は左右に配置する -->
+    <!-- 縦幅、横幅を指定することがでいない -->
+    <div class="parent">
+      <span class="inlineColor">インライン要素</span>
+      <span class="inlineColor">インライン要素</span>
+      <span class="inlineColor">インライン要素</span>
+      <span class="inlineColor">インライン要素</span>
+    </div>
+
+    <!-- ブロック要素は縦に配置する -->
+    <div class="blockColor">ブロック要素</div>
+    <div class="blockColor">ブロック要素</div>
+    <div class="blockColor">ブロック要素</div>
+    <div class="blockColor">ブロック要素</div>
+  </body>
+</html>
