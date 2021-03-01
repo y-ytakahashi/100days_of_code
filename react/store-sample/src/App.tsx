@@ -1,24 +1,45 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import TableLane from './components/tableLane'
+import Style from './index.module.scss'
 function App() {
+
+  const timeGridHour = new Array(24).fill("1")
+  const viewDateCol = ['2021-03-01', '2021-03-02', '2021-03-03']
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        サンプル時刻表
+      </div>
+      <table className={Style.calendar}>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <tbody >
+          {
+            viewDateCol.map((item: any) => {
+              return (
+                <td className={Style.dateColum}>
+                  {item}
+                  <div>
+                    memo
+                  </div>
+                  {
+                    timeGridHour.map((item: any, key: number) => {
+                      return (
+                        <TableLane increment={key} />
+                      )
+                    })
+                  }
+                </td>
+              )
+            })
+          }
+        </tbody>
+      </table >
     </div>
   );
 }

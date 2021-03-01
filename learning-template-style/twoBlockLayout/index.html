@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      height: 100%;
+      /* left: 0; */
+      /* 絶対位置への配置となる。  */
+      /* position: fixed; */
+      /* top: 0; */
+      width: 100%;
+      /* background-color: red; */
+      /* z-index: 9999; */
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      background: blue;
+      position: fixed;
+      height: 100%;
+    }
+
+    .backdrop {
+      width: 100%;
+    }
+
+    .mainArea {
+      margin: 0;
+      display: flex;
+      background: red;
+      width: 400px;
+      height: 600px;
+      margin-left: 200px;
+      overflow-x: scroll;
+    }
+
+    .mainItem {
+      /* position:absolute; */
+      height: 100vh;
+      background: green;
+      border-left: 1px solid #4a4a4a;
+    }
+
+    .mainItemLane {
+      height: 100%;
+      background: yellow;
+    }
+    table { 
+      border-collapse: collapse;
+      border: solid thick;
+      height: 100%;
+    }
+    tbody {
+      height:100%;
+    }
+    td { 
+      border: solid thin; 
+      /* height: 1.4em;  */
+      width: 15px;
+      text-align: center; 
+      padding: 0; }
+  </style>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar"></div>
+      <!-- Backdrop -->
+      <div class="mainArea">
+        <div class="mainItem">
+          <div>Lane Header</div>
+          <div class="mainItemLane">
+            <table>
+              <tbody>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                <tr> 
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                  <td> 
+                    <div>aaaa</div>
+                  </td>
+                </tr>
+                
+                <!-- <tr> <td> 7 <td>   <td>   <td>   <td>   <td>   <td>   <td>   <td> 6
+                <tr> <td> 7 <td>   <td>   <td>   <td>   <td>   <td>   <td>   <td> 6
+                <tr> <td> 7 <td>   <td>   <td>   <td>   <td>   <td>   <td>   <td> 6
+                <tr> <td> 7 <td>   <td>   <td>   <td>   <td>   <td>   <td>   <td> 6 -->
+             </table>
+          </div>
+        </div>
+        <div class="mainItem">
+          <div>Lane Header</div>
+          <div class="mainItemLane">レーン</div>
+        </div>
+        <div class="mainItem">
+          <div>Lane Header</div>
+          <div class="mainItemLane">レーン</div>
+        </div>
+        <div class="mainItem">
+          <div>Lane Header</div>
+          <div class="mainItemLane">レーン</div>
+        </div>
+        <div class="mainItem">
+          <div>Lane Header</div>
+          <div class="mainItemLane">レーン</div>
+        </div>
+      </div>
+
+      <div>
+        <!-- <table>
+          <tbody>
+           <tr> 
+             <td> 1 <td>   <td> 3 <td> 6 <td>   <td> 4 <td> 7 <td>   <td> 9
+           <tr> <td>   <td> 2 <td>   <td>   <td> 9 <td>   <td>   <td> 1 <td>
+           <tr> <td> 7 <td>   <td>   <td>   <td>   <td>   <td>   <td>   <td> 6
+         </table> -->
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
