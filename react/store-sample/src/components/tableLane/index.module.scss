@@ -1,15 +1,18 @@
-html{
-  margin:0;
-  padding: 0;
-}
 .tableArea {
   border-collapse: collapse;
-  border: solid 1px black;
-  
-}
+  border: none;
 
-td {
-  margin:0;
-  padding: 0;
-  border:1px solid black;
+  &__hour {
+    margin: 0;
+    border: 1px solid black;
+    min-width: 50px;
+    min-height: 20px;
+    
+  }
+  &__minute {
+    height: 2rem;
+    border: 1px solid gray;
+    background:red;
+    z-index: 2;
+  }
 }
