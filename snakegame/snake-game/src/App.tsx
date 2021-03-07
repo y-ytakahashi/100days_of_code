@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Navigation from './components/Navigation'
 import Field from './components/Field'
 import MainipulationPanel from './components/ManipulationPanel'
@@ -17,6 +17,33 @@ const GameStatus = Object.freeze({
   gameover: 'gameover'
 })
 
+const Direction = Object.freeze({
+  up: 'up',
+  right: 'right',
+  left: 'left',
+  down: 'down'
+})
+
+const OppitionsDirection: any = Object.freeze({
+  up: 'up',
+  right: 'right',
+  left: 'left',
+  down: 'down'
+})
+
+const DirectionKeyCodeMap: any = Object.freeze({
+  37: Direction.left,
+  38: Direction.up,
+  39: Direction.right,
+  40: Direction.down
+})
+
+const Delta: any = Object.freeze({
+  up: { x: 0, y: -1 },
+  right: { x: 1, y: 0 },
+  left: { x: -1, y: 0 },
+  down: { x: 0, y: 1 },
+})
 let timer: any = undefined;
 const unsubscribe = () => {
   if (!timer) {
@@ -46,6 +73,7 @@ function App() {
   const [position, setPosition] = useState<Position>();
   const [status, setStatus] = useState(GameStatus.init);
   const [tick, setTick] = useState<any>(0);
+  const [direction, setDirection] = useState<any>(Direction.up);
 
   useEffect(() => {
     setPosition(initialPosition);
@@ -62,7 +90,7 @@ function App() {
     if (!position || status !== GameStatus.playing) {
       return
     }
-    const canContinue: Function = goUp();
+    const canContinue: Function = handleMoving();
     if (!canContinue) {
       setStatus(GameStatus.gameover);
     }
@@ -74,32 +102,62 @@ function App() {
   // Restart
   const onRestart = () => {
     timer = setInterval(() => {
-      setTick((tick:number) => tick + 1)
+      setTick((tick: number) => tick + 1)
     }, defaultInterval);
-    // setDirection(Direction.up);
+    setStatus(GameStatus.init);
+    setDirection(Direction.up);
     setPosition(initialPosition);
-    setFields(initFields(35,initialPosition))
+    setFields(initFields(35, initialPosition));
 
   }
 
 
   // 前に進む
-  const goUp: Function = () => {
+  const handleMoving: Function = () => {
 
     const { x, y } = position as Position;
-    const newPosition = { x, y: y - 1 }
-    if(isCollision(fields.length, newPosition)){
+    console.log({ direction })
+    const delta = Delta[direction];
+    console.log({ delta })
+    const newPosition: Position = {
+      x: x + delta.x,
+      y: y + delta.y
+    }
+    if (isCollision(fields.length, newPosition)) {
       unsubscribe();
-      return false 
+      return false
     }
     fields[y][x] = '';
-    fields[newPosition.y][x] = 'snake';
+    fields[newPosition.y][newPosition.x] = 'snake';
     setPosition(newPosition);
     setFields(fields)
     console.log(fields);
     return true
   }
 
+  const onChangeDirection = useCallback((newDirection: any) => {
+    if (status !== GameStatus.playing) {
+      return direction;
+    }
+    if (OppitionsDirection[direction] === newDirection) {
+      return
+    }
+    setDirection(newDirection)
+  }, [direction, status])
+
+  useEffect(() => {
+    const handleKeyDown = (e: any) => {
+      const newDirection = DirectionKeyCodeMap[e.keyCode];
+      if (!newDirection) {
+        return;
+      };
+      onChangeDirection(newDirection);
+    };
+    document.addEventListener('keydown',handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  },[onChangeDirection])
+
+  console.log('direction', direction);
   return (
     <div className="App">
       {/* タイトルとナビゲーション */}
@@ -118,7 +176,7 @@ function App() {
       <footer className="footer">
         {/* 操作ボタン表示領域 */}
         <Button status={status} onRestart={onRestart} onStart={onStart} />
-        <MainipulationPanel />
+        <MainipulationPanel onChange={onChangeDirection} />
       </footer>
     </div>
   );
