@@ -1,9 +1,18 @@
 import React from 'react'
-
-const Field = () => {
+interface Props {
+  fields: any
+}
+const Field: React.FC<Props> = ({ fields }) => {
   return (
-    <div>
-      <p>Field</p>
+    <div className="field">
+      {
+        // new Array(35 * 35).fill('').map(() => <div className="dots"></div>)
+        fields.map((row:any) => {
+          return row.map((column: any) => {
+            return <div className={`dots ${column}`}></div>
+          })
+        })
+      }
     </div>
   )
 }
