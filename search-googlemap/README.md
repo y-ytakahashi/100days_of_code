@@ -8,6 +8,24 @@ redux-toolkit
 yarn add @reduxjs/toolkit
 ```
 
+storybook
+
+```
+npx -p @storybook/cli sb init
+```
+
+node-sass
+
+```
+yarn add @types/node-sass
+```
+
+Material-ui
+
+```
+yarn add @material-ui/core
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
