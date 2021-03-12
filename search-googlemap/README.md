@@ -26,6 +26,14 @@ Material-ui
 yarn add @material-ui/core
 ```
 
+react-router-dom
+
+```
+yarn add react-router-dom
+yarn add  @types/react-router-dom
+
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
