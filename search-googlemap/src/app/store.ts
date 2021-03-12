@@ -7,10 +7,12 @@ export const store = configureStore({
   },
 });
 
+//eslint-disable-next-line
 export type RootState = ReturnType<typeof store.getState>;
+
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
-  unknown,
+  unknown, //eslint-disable-line
   Action<string>
 >;
